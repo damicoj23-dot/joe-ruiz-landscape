@@ -1,16 +1,23 @@
 import { Reveal } from '../hooks/reveal'
 import trimming from '../assets/trimming.jpg'
+import joeVideo from '../assets/joe-trimming.mp4'
 
 export default function About() {
   return (
     <section id="about" className="border-b border-ink/15 bg-parch/60">
       <div className="mx-auto grid max-w-[1400px] lg:grid-cols-2">
         <div className="relative min-h-[50vh] border-b border-ink/15 lg:min-h-[80vh] lg:border-b-0 lg:border-r">
-          <img
-            src={trimming}
-            alt="Joe Ruiz trimming a hedge in a Sarasota garden"
+          <video
             className="absolute inset-0 h-full w-full object-cover"
-          />
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={trimming}
+            aria-label="Joe Ruiz meticulously trimming a hedge by hand"
+          >
+            <source src={joeVideo} type="video/mp4" />
+          </video>
         </div>
 
         <div className="flex flex-col justify-center px-6 py-16 md:px-12 md:py-24 lg:px-16">
